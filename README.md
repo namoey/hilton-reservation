@@ -9,6 +9,7 @@ This is a POC project to show the basic flow of the guest reservation. This incl
 
 ### reservation-server (port: 4000)
 This is a Node express server that provides Restful api for User and Reservation management
+
 Basic URL: http://localhost:4000
 
 <img width="207" alt="image" src="https://user-images.githubusercontent.com/8122026/176870136-c52e5518-0c2f-4f65-8d3e-88c72affb708.png">
