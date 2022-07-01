@@ -96,6 +96,7 @@ Admin users can Confirm the reservation
 
 ### Run reservation-graphql
 yarn start
+
 We can user [Graphql Playground](https://github.com/graphql/graphql-playground) or Postman to try with graphql
 
 <img width="1197" alt="image" src="https://user-images.githubusercontent.com/8122026/176873499-759e4520-fe9c-4835-86e6-28bb8de3747e.png">
