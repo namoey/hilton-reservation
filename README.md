@@ -35,15 +35,25 @@ query{
 ## 3rd party packages
 
 yarn add typescript -g  // Support typescript
+
 yarn add express  // For Restful api
+
 yarn add cors // Cross-Origin Resource sharing
+
 yarn add mongoose  // For mongdb
+
 yarn add -D @types/node @types/express @types/mongoose @types/cors  //install type support
+
 yarn add -D concurrently nodemon
+
 yarn add date-fns //For date processing
+
 yarn add jsonwetoken
+
 yarn add bcryptjs //For encryption
+
 yarn add react-toastify //A fancy light-weight toast package
+
 
 ## Enrionment Preparing
 ### Mongodb setup
