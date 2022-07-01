@@ -95,7 +95,7 @@ We can build image and deploy via vscode easily.
 
 <img width="1047" alt="image" src="https://user-images.githubusercontent.com/8122026/176874172-df3a4ebb-71fb-4757-b592-786fb38e1613.png">
 
-# What need to improved
+# What need to be improved
 Since this is a POC project and definitely there are lots of points need to improve
 * User management and auth system should be better and the approaval process should be much more complicated in real life
 * Better interactive UI should be designed, at list we should have pagenization for Admin view
