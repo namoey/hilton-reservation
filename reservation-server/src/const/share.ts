@@ -1,0 +1,1 @@
+export const TOKEN_SECRET = "94a0cb50-57a1-fc98-417b-1216bf5344f4" as const
