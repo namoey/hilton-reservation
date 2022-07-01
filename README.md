@@ -101,8 +101,7 @@ We can user [Graphql Playground](https://github.com/graphql/graphql-playground) 
 <img width="1197" alt="image" src="https://user-images.githubusercontent.com/8122026/176873499-759e4520-fe9c-4835-86e6-28bb8de3747e.png">
 
 ### Deploy to Docker
-Docker file already creaed for reservation-server
-We can build image and deploy via vscode easily.
+Docker file already creaed for reservation-server, we can build image and deploy via vscode easily.
 
 <img width="1047" alt="image" src="https://user-images.githubusercontent.com/8122026/176874172-df3a4ebb-71fb-4757-b592-786fb38e1613.png">
 
