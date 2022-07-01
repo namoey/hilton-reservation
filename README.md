@@ -4,7 +4,7 @@
 This is a POC project to show the basic flow of the guest reservation. This includes:
 * Basic user managemant with very basic roles like, Guest, Admin, Guest can make the reservation and delete before it's confirmed by Admin. Admin users can view reservations from all Guest users and have the full control of the records while a Guest can only view reservations created by their own.
 * Basic jwt-token-based authorization implemented, all api call need the credential
-* Basic graphql layer implemented, it's not a replacement of Restful api, it act as a gateway on top the the exiting Resful api.
+* Basic graphql layer implemented, it's not a replacement of Restful api, it acts as a gateway on top of the the exiting Resful api.
 * Docker support for reservation-server
 
 ### reservation-server (port: 4000)
