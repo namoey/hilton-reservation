@@ -5,7 +5,8 @@ const jwt = require('jsonwebtoken')
 
 const authMiddleware = (req: Request, res: Response, next: any) => {
     
-    if (req.originalUrl.startsWith("/user/login")) {
+    if (req.originalUrl.startsWith("/user/login") || 
+        req.originalUrl.startsWith("/metrics")) {
         next()
         return
     }

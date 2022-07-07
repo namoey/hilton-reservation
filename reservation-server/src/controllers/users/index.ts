@@ -2,14 +2,19 @@ import { Response, Request } from "express"
 import { IUser } from "../../types/user"
 import User from "../../models/user"
 import { TOKEN_SECRET } from "../../const/share" 
+import { histogram } from "../prometheus"
 
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
 const getUsers = async(req: Request, res: Response): Promise<void> => {
     try{
+        const end = histogram.startTimer();
+
         let users: IUser[] | null
         users = await User.find()
+
+        end({ route: req.route.path, code: res.statusCode, method: req.method })
         res.status(200).json({users})
     } catch(error) {
         console.log(error);
@@ -19,6 +24,7 @@ const getUsers = async(req: Request, res: Response): Promise<void> => {
 
 const addUser = async(req: Request, res: Response): Promise<void> => {
     try {
+        const end = histogram.startTimer();
         const body = req.body as Pick<IUser, "userType" | "userName" | "password" | "phone">
         
         const useInDB: IUser | null = await User.findOne({userName: body.userName})
@@ -36,6 +42,7 @@ const addUser = async(req: Request, res: Response): Promise<void> => {
         })
         const newUser: IUser = await user.save();
 
+        end({ route: req.route.path, code: res.statusCode, method: req.method })
         res.status(201).json({message: "User added", user: newUser})
     } catch(error) {
         console.log(error);
@@ -45,9 +52,13 @@ const addUser = async(req: Request, res: Response): Promise<void> => {
 
 const updateUser = async(req: Request, res: Response): Promise<void> => {
     try {
+        const end = histogram.startTimer();
+
         const id = req.params.id
         const body = req.body as Pick<IUser, "userType" | "userName" | "password" | "phone">
         const updateUser: IUser | null = await User.findByIdAndUpdate(id, body)
+        
+        end({ route: req.route.path, code: res.statusCode, method: req.method })
         res.status(200).json({
             message: "User updated",
             user: updateUser
@@ -60,9 +71,13 @@ const updateUser = async(req: Request, res: Response): Promise<void> => {
 
 const deleteUser = async(req: Request, res: Response): Promise<void> => {
     try {
+        const end = histogram.startTimer();
+        
         const deleteUser: IUser | null = await User.findByIdAndDelete (
             req.params.id
         )
+        
+        end({ route: req.route.path, code: res.statusCode, method: req.method })
         res.status(200).json({
             message: "User deleted",
             user: deleteUser
